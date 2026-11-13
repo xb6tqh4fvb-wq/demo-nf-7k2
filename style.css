@@ -1,0 +1,85 @@
+:root{--bg:#0d0f0e;--bg2:#151816;--tekst:#ece8df;--zacht:#a9a698;--accent:#e8a33d;--lijn:#2a2e2b}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tekst);font:18px/1.65 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.12;letter-spacing:-.01em}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+header.top{position:fixed;inset:34px 0 auto;z-index:10;background:#0d0f0eeb;backdrop-filter:blur(8px);padding:12px 0}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.merk{font-family:Georgia,serif;font-size:20px;text-decoration:none;letter-spacing:.02em}
+.merk small{display:block;font:11px/1 system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-top:4px}
+nav{display:flex;gap:26px;font-size:15px;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--zacht);transition:color .2s}
+nav a:hover,nav a[aria-current]{color:var(--tekst)}
+.knop{display:inline-block;background:var(--accent);color:#1a1205;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;font-size:16px}
+.knop.rand{background:none;color:var(--tekst);border:1px solid #ffffff55}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0d0f0e66 0%,#0d0f0e00 35%,#0d0f0ee6 90%,#0d0f0e 100%)}
+.hero .wrap{position:relative;z-index:2;padding:0 0 11vh}
+.hero.klein{min-height:68svh}
+.oogje{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero h1{font-size:clamp(40px,7vw,92px);max-width:13em}
+.hero p.sub{max-width:34em;margin:22px 0 32px;color:#d8d4c8;font-size:clamp(17px,2vw,21px)}
+.knoppen{display:flex;gap:14px;flex-wrap:wrap}
+section{padding:clamp(64px,10vw,120px) 0}
+section.licht{background:var(--bg2)}
+h2{font-size:clamp(30px,4.4vw,52px);margin-bottom:22px}
+.twee{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,6vw,80px);align-items:center}
+.twee img{border-radius:6px;width:100%;height:100%;max-height:640px;object-fit:cover}
+.lead{color:var(--zacht);max-width:36em}
+.lead+.lead{margin-top:1em}
+.drie{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:40px}
+.drie div{border-top:1px solid var(--accent);padding-top:20px}
+.drie h3{font-size:22px;margin-bottom:10px}
+.drie p{color:var(--zacht);font-size:16px}
+.kaarten{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:40px}
+.kaart{position:relative;aspect-ratio:4/3;overflow:hidden;border-radius:6px;text-decoration:none;display:flex;align-items:flex-end}
+.kaart img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.kaart:hover img{transform:scale(1.04)}
+.kaart::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,#0d0f0ef0)}
+.kaart div{position:relative;z-index:2;padding:26px}
+.kaart h3{font-size:28px}
+.kaart span{color:var(--accent);font-size:14px;letter-spacing:.14em;text-transform:uppercase}
+.citaten{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:40px}
+blockquote{font-family:Georgia,serif;font-size:21px;line-height:1.4}
+blockquote cite{display:block;margin-top:14px;font:14px system-ui,sans-serif;color:var(--accent);font-style:normal;letter-spacing:.08em}
+.lijst{list-style:none;padding:0;margin-top:28px;display:grid;gap:14px}
+.lijst li{padding-left:28px;position:relative;color:#d8d4c8}
+.lijst li::before{content:"";position:absolute;left:0;top:.72em;width:14px;height:1px;background:var(--accent)}
+.galerij{columns:3 280px;column-gap:14px;margin-top:36px}
+.galerij img{width:100%;margin-bottom:14px;border-radius:4px}
+.tv{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px}
+footer{border-top:1px solid var(--lijn);padding:44px 0;color:var(--zacht);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.voorbeeld{position:fixed;inset:0 0 auto;z-index:20;background:var(--accent);color:#1a1205;text-align:center;font-size:13px;padding:8px 16px}
+@media(max-width:860px){
+ .voorbeeld{font-size:12px;padding:7px 10px}
+ body{font-size:17px}
+ nav{gap:14px;font-size:13px}
+ header.top .wrap{flex-direction:column;align-items:flex-start;gap:8px}
+ .twee,.drie,.kaarten,.citaten{grid-template-columns:1fr}
+ .hero .wrap{padding-bottom:8vh}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+.prak{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;margin-top:28px}
+.prak div{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px 0;border-top:1px solid var(--lijn)}
+.prak dt{color:var(--accent);font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding-top:3px}
+.prak dd{margin:0;color:#d8d4c8}
+.video{position:relative;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.media{display:grid;gap:0;margin-top:36px}
+.media a{display:block;padding:22px 0;border-top:1px solid var(--lijn);text-decoration:none}
+.media span{display:block;color:var(--accent);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.media strong{font:400 24px/1.25 Georgia,serif}
+.media a:hover strong{text-decoration:underline}
+@media(max-width:860px){.prak{grid-template-columns:1fr}.prak div{grid-template-columns:1fr;gap:4px}}
+.drie-k{grid-template-columns:repeat(3,1fr)}
+figure.ai{margin:0}
+figure.ai img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:6px}
+figure.ai figcaption{font-size:12px;color:var(--zacht);margin:8px 0 18px}
+figure.ai h3{font-size:22px;margin-bottom:8px}
+figure.ai p{color:var(--zacht);font-size:16px}
+@media(max-width:860px){.drie-k{grid-template-columns:1fr}}
